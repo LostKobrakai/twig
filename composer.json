@@ -1,0 +1,19 @@
+{
+    "name": "bitmade/node-twig",
+    "config": {
+        "vendor-dir": "php/vendor"
+    },
+    "require": {
+        "twig/twig": "^1.24"
+    },
+    "autoload": {
+        "classmap": ["php/lib/"]
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Manuel Moritz-Schliesing",
+            "email": "manuel@bitmade.de"
+        }
+    ]
+}
