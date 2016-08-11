@@ -1,19 +1,7 @@
 {
-    "name": "bitmade/node-twig",
-    "config": {
-        "vendor-dir": "php/vendor"
-    },
+    "name": "frctl-twig",
     "require": {
-        "twig/twig": "^1.24"
+        "lostkobrakai/frctl-twig": "^0.0.1"
     },
-    "autoload": {
-        "classmap": ["php/lib/"]
-    },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Manuel Moritz-Schliesing",
-            "email": "manuel@bitmade.de"
-        }
-    ]
+    "license": "MIT"
 }

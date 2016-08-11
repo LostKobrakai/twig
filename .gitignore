@@ -1,6 +1,8 @@
 composer.lock
 php/vendor/
 
+vendor/
+
 .idea/
 
 *.DS_Store
