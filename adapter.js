@@ -3,6 +3,7 @@
 const _ = require('lodash');
 const twig = require('./engine.js').renderFile;
 const Adapter = require('@frctl/fractal').Adapter;
+const utils      = require('@frctl/fractal').utils;
 
 class TwigAdapter extends Adapter {
 
@@ -16,10 +17,10 @@ class TwigAdapter extends Adapter {
     const self = this;
     meta = meta || {};
 
-    // setEnv('_self', meta.self, context);
-    // setEnv('_target', meta.target, context);
-    // setEnv('_env', meta.env, context);
-    // setEnv('_config', this._app.config(), context);
+    setEnv('_self', meta.self, context);
+    setEnv('_target', meta.target, context);
+    setEnv('_env', meta.env, context);
+    //setEnv('_config', this._app.config(), context);
 
     _.each(this._views, function (view) {
       if (path == view.path) return;
@@ -29,7 +30,14 @@ class TwigAdapter extends Adapter {
     const options = {
       context: context,
       aliases: partials,
-      root: this._source.fullPath
+      root: this._source.fullPath,
+      staticRoot: !meta.env.request && !meta._request 
+        ? '/' 
+        : utils.relUrlPath(
+            '/file', 
+            _.get(meta.env.request || meta._request, 'path', '/'), 
+            { ext: '' }
+          ).replace('/file', '/')
     };
 
     return new Promise(function (res, rej) {

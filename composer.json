@@ -1,7 +1,7 @@
 {
     "name": "frctl-twig",
     "require": {
-        "lostkobrakai/frctl-twig": "^0.0.1"
+        "lostkobrakai/frctl-twig": "^0.0.2"
     },
     "license": "MIT"
 }
